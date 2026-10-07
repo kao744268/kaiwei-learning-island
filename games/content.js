@@ -7,8 +7,8 @@ function shapeSvg(t){let f="#ff7287",m={circle:`<circle cx="50" cy="50" r="38" f
 window.UNITS={
 color:{title:"🎨 顏色島",modes:["tap","drag","line"],data(){let bank=[];for(let r=0;r<4;r++)colors.forEach(x=>bank.push({answer:x[0],prompt:`請找出${x[0]}！`}));return{bank,all:colors.map(x=>x[0]),map:Object.fromEntries(colors)}},visual(v,d){return`<div class="ball" style="background:${d.map[v]}"></div>`}},
 shape:{title:"🔺 形狀森林",modes:["tap","drag","line"],data(){let bank=[];for(let r=0;r<4;r++)shapes.forEach(x=>bank.push({answer:x[0],prompt:`請找出${x[0]}！`}));return{bank,all:shapes.map(x=>x[0]),map:Object.fromEntries(shapes)}},visual(v,d){return shapeSvg(d.map[v])}},
-number:{title:"🔢 數字王國",modes:["tap","drag","line","trace"],data(){let all=Array.from({length:20},(_,i)=>String(i+1)),bank=[];for(let r=0;r<2;r++)all.forEach(v=>bank.push({answer:v,prompt:`請找出數字${v}！`}));return{bank,all}},visual(v){return`<div class="symbol">${v}</div>`},trace:true},
-bpmf:{title:"🎈 注音樂園",modes:["tap","drag","line","trace"],data(){return{bank:bpmf.map(v=>({answer:v,prompt:`請找出注音${v}！`})),all:bpmf}},visual(v){return`<div class="symbol">${v}</div>`},trace:true},
+number:{title:"🔢 數字王國",modes:["tap","drag","line"],data(){let all=Array.from({length:20},(_,i)=>String(i+1)),bank=[];for(let r=0;r<2;r++)all.forEach(v=>bank.push({answer:v,prompt:`請找出數字${v}！`}));return{bank,all}},visual(v){return`<div class="symbol">${v}</div>`}},
+bpmf:{title:"🎈 注音樂園",modes:["tap","drag","line"],data(){return{bank:bpmf.map(v=>({answer:v,prompt:`請找出注音${v}！`})),all:bpmf}},visual(v){return`<div class="symbol">${v}</div>`}},
 daily:{title:"🏠 生活小達人",modes:["tap","drag","line"],data(){let all=daily.map(x=>x[0]),bank=[];for(let r=0;r<2;r++)daily.forEach(x=>bank.push({answer:x[0],prompt:`請找出${x[0]}！`}));return{bank,all,map:Object.fromEntries(daily)}},visual(v,d){return`<div class="emoji">${d.map[v]}</div>`}},
 body:{title:"🧒 身體探險隊",modes:["tap","drag","line"],data(){let all=body.map(x=>x[0]),bank=[];for(let r=0;r<2;r++)body.forEach(x=>bank.push({answer:x[0],prompt:`請找出${x[0]}！`}));return{bank,all,map:Object.fromEntries(body)}},visual(v,d){return`<div class="emoji">${d.map[v]}</div>`}}
 };
