@@ -1,42 +1,17 @@
 <!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#68cfff"><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="css/game.css"><title>愷威學習島</title></head><body>
 <canvas id="fx"></canvas><main>
-<section id="home" class="screen active">
-  <div class="mapHeader">
-    <div class="mapLogo"><span>愷威學習島</span><small>KAIWEI LEARNING ISLAND</small></div>
-    <div class="mapPrompt">今天想去哪裡冒險呢？</div>
+<section id="home" class="screen active v6home">
+  <div class="v6map" aria-label="愷威學習島">
+    <img src="./assets/island-map.png" alt="愷威學習島卡通冒險地圖">
+    <button class="hotspot hs-color" data-unit="color" aria-label="顏色島"></button>
+    <button class="hotspot hs-shape" data-unit="shape" aria-label="形狀森林"></button>
+    <button class="hotspot hs-number" data-unit="number" aria-label="數字王國"></button>
+    <button class="hotspot hs-bpmf" data-unit="bpmf" aria-label="注音樂園"></button>
+    <button class="hotspot hs-daily" data-unit="daily" aria-label="生活小達人"></button>
+    <button class="hotspot hs-body" data-unit="body" aria-label="身體探險隊"></button>
+    <button class="hotspot hs-trace" data-unit="trace" aria-label="筆畫練習屋"></button>
   </div>
-
-  <div class="islandMap" aria-label="愷威學習島地圖">
-    <svg class="mapBg" viewBox="0 0 1200 720" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-      <defs>
-        <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#7ee0ff"/><stop offset="1" stop-color="#48bde9"/></linearGradient>
-        <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b8ef78"/><stop offset="1" stop-color="#65c96b"/></linearGradient>
-        <filter id="shadow"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-opacity=".22"/></filter>
-      </defs>
-      <rect width="1200" height="720" rx="52" fill="url(#sea)"/>
-      <g opacity=".35" fill="none" stroke="#fff" stroke-width="6">
-        <path d="M20 145 Q90 115 160 145 T300 145"/><path d="M900 110 Q970 80 1040 110 T1180 110"/>
-        <path d="M25 590 Q95 560 165 590 T305 590"/><path d="M930 620 Q1000 590 1070 620 T1210 620"/>
-      </g>
-      <path d="M171 407 C115 319 180 205 313 184 C403 110 543 139 594 203 C687 135 842 150 891 231 C1014 231 1086 321 1031 417 C1097 504 1008 596 892 577 C815 648 688 633 620 576 C538 641 398 627 350 565 C231 586 137 504 171 407Z" fill="#f3d291" filter="url(#shadow)"/>
-      <path d="M184 385 C149 306 221 224 326 215 C414 153 523 173 585 231 C678 171 804 180 866 249 C966 240 1034 313 1004 394 C1050 467 970 543 875 530 C794 596 694 581 621 532 C543 590 427 577 370 526 C268 547 183 475 184 385Z" fill="url(#grass)"/>
-      <path d="M224 412 C360 354 463 378 574 425 S794 481 963 402" fill="none" stroke="#f7d27c" stroke-width="28" stroke-linecap="round" stroke-dasharray="4 17"/>
-      <g fill="#fff" opacity=".85"><ellipse cx="105" cy="90" rx="55" ry="22"/><ellipse cx="1090" cy="170" rx="62" ry="25"/></g>
-      <g font-size="34"><text x="73" y="670">🐠</text><text x="1080" y="670">🐟</text><text x="1110" y="80">☁</text><text x="55" y="180">☁</text></g>
-    </svg>
-
-    <button class="mapSpot spotColor" data-unit="color" aria-label="顏色島"><span class="sceneIcon paletteIcon"><i></i><i></i><i></i><i></i></span><b>顏色島</b><small>彩色風車村</small></button>
-    <button class="mapSpot spotShape" data-unit="shape" aria-label="形狀森林"><span class="sceneIcon shapeIcon"><i></i><i></i><i></i></span><b>形狀森林</b><small>積木森林</small></button>
-    <button class="mapSpot spotNumber" data-unit="number" aria-label="數字王國"><span class="sceneIcon castleIcon"><i>1</i><i>2</i><i>3</i></span><b>數字王國</b><small>數字城堡</small></button>
-    <button class="mapSpot spotBpmf" data-unit="bpmf" aria-label="注音樂園"><span class="sceneIcon bopomofoIcon">ㄅ</span><b>注音樂園</b><small>注音摩天輪</small></button>
-    <button class="mapSpot spotDaily" data-unit="daily" aria-label="生活小達人"><span class="sceneIcon houseIcon"><i></i></span><b>生活小達人</b><small>生活小屋</small></button>
-    <button class="mapSpot spotBody" data-unit="body" aria-label="身體探險隊"><span class="sceneIcon bodyIcon"><i></i></span><b>身體探險隊</b><small>探索研究站</small></button>
-    <button class="mapSpot spotTrace" data-unit="trace" aria-label="筆畫練習屋"><span class="sceneIcon pencilIcon">✎</span><b>筆畫練習屋</b><small>魔法畫畫屋</small></button>
-
-    <div class="mapFriends" aria-hidden="true"><span class="mapKid">●</span><span class="mapDog">●</span></div>
-    <div class="mapRainbow" aria-hidden="true"></div>
-  </div>
-  <div class="mapTip"><span>☝</span> 點地圖上的地方，就可以開始玩！</div>
+  <div class="v6help">點地圖上的區域開始冒險</div>
 </section>
 <section id="game" class="screen"><div class="gameShell"><header><button id="back" class="round">🏠</button><div id="title"></div><div id="progress"></div><div class="tools"><button id="replay">🔊<small>重聽</small></button><button id="hint">💡<small>提示</small></button><button id="restart">↻<small>重來</small></button></div></header><div class="guideRow"><div class="guideMascot">🐶</div><div id="caption"></div><div id="mode"></div></div><div id="stars"></div><div id="field"></div><div id="feedback"></div></div></section>
 </main><div id="traceSelect"><div class="traceSelectCard"><span>✍️</span><h2>今天想寫什麼？</h2><button id="traceNumber">🔢<b>寫數字</b><small>1 ～ 20</small></button><button id="traceBpmf">ㄅ<b>寫注音</b><small>ㄅ ～ ㄦ</small></button><button id="traceCancel">回學習島</button></div></div><div id="finish"><div><span>🏆🌟</span><h2>太棒了！</h2><p>這一關完成囉！</p><button id="again">再玩一次</button><button id="homeBtn">回學習島</button></div></div>
