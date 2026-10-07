@@ -1,5 +1,3 @@
-# 愷威學習島
+# 愷威學習島 V2
 
-GitHub V1：顏色島＋形狀森林＋共用遊戲引擎＋PWA 離線快取。
-
-GitHub Pages：Settings → Pages → Deploy from a branch → main → /(root) → Save。
+新增：點選、拖曳配對、連連看三種玩法；UI 精緻化；更新離線快取版本。
