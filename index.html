@@ -1,9 +1,12 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#73d1ff"><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="css/game.css"><title>愷威學習島</title></head><body>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#68cfff"><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="css/game.css"><title>愷威學習島</title></head><body>
 <canvas id="fx"></canvas><main>
-<section id="home" class="screen active"><div class="skybits">☁️　✨　☁️</div><div class="logo">🌈 愷威學習島<small>KAIWEI LEARNING ISLAND</small></div><div class="mascot">👦🏻<span>🐶</span></div><h1>今天想去哪裡玩呢？</h1><div class="islands">
-<button class="island color" data-unit="color"><span class="badge">🎨</span><b>顏色島</b><small>COLOR ISLAND</small><i>點選・拖曳・連連看</i></button>
-<button class="island shape" data-unit="shape"><span class="badge">🔺</span><b>形狀森林</b><small>SHAPE FOREST</small><i>點選・拖曳・連連看</i></button>
-<button class="island locked">🔢<b>數字王國</b><small>下一階段</small></button><button class="island locked">🎈<b>注音樂園</b><small>下一階段</small></button></div></section>
-<section id="game" class="screen"><header><button id="back" class="circle">🏠</button><div id="title"></div><div id="progress"></div><div class="tools"><button id="replay">🔊<small>重聽</small></button><button id="hint">💡<small>提示</small></button><button id="restart">↻<small>重來</small></button></div></header><div id="modePill"></div><div id="caption"></div><div id="stars"></div><div id="field"></div><div id="feedback" aria-live="polite"></div></section>
-</main><div id="finish"><div class="finishCard"><span>🏆🌟</span><h2>太棒了！</h2><p>五題全部完成囉！</p><button id="again">再玩一次</button><button id="homeBtn">回學習島</button></div></div>
-<script src="games/color.js"></script><script src="games/shape.js"></script><script src="js/game-engine.js"></script><script src="js/app.js"></script></body></html>
+<section id="home" class="screen active"><div class="clouds">☁️　⭐　☁️</div><div class="logo">🌈 愷威學習島<small>KAIWEI LEARNING ISLAND</small></div><div class="hero">👦🏻 <span>🐶</span></div><h1>今天想去哪裡玩呢？</h1><div class="islands">
+<button class="island color" data-unit="color">🎨<b>顏色島</b><small>點選・拖曳・連連看</small></button>
+<button class="island shape" data-unit="shape">🔺<b>形狀森林</b><small>點選・拖曳・連連看</small></button>
+<button class="island number" data-unit="number">🔢<b>數字王國</b><small>認數字・數量・筆畫</small></button>
+<button class="island bpmf" data-unit="bpmf">ㄅ<b>注音樂園</b><small>認符號・配對・筆畫</small></button>
+<button class="island daily" data-unit="daily">🏠<b>生活小達人</b><small>認識生活物品</small></button>
+<button class="island body" data-unit="body">🧒<b>身體探險隊</b><small>認識身體部位</small></button></div></section>
+<section id="game" class="screen"><header><button id="back" class="round">🏠</button><div id="title"></div><div id="progress"></div><div class="tools"><button id="replay">🔊<small>重聽</small></button><button id="hint">💡<small>提示</small></button><button id="restart">↻<small>重來</small></button></div></header><div id="mode"></div><div id="caption"></div><div id="stars"></div><div id="field"></div><div id="feedback"></div></section>
+</main><div id="finish"><div><span>🏆🌟</span><h2>太棒了！</h2><p>這一關完成囉！</p><button id="again">再玩一次</button><button id="homeBtn">回學習島</button></div></div>
+<script src="games/content.js"></script><script src="js/game-engine.js"></script><script src="js/app.js"></script></body></html>
